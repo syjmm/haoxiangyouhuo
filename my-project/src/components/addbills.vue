@@ -1,5 +1,5 @@
 <template>
-    <div id="mian">
+    <div id="main">
         <!--头部-->
         <header>
             <img src="../assets/images/back.png" class="back">
@@ -77,7 +77,7 @@
         margin-top:0.54rem;
     }
     .anniu{
-        width: 6.36rem;
+        width: 100%;
         height: 1.78rem;
         display: block;
         margin:0 auto;
