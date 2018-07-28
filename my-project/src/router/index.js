@@ -11,6 +11,21 @@ import Afterorder from '@/components/afterorder'
 import Shopshow from '@/components/shopshow'
 import Goodshow from '@/components/goodshow'
 import Memberover from '@/components/memberover'
+import Logistics from '@/components/logistics'
+import Activemore from '@/components/activemore'
+import Shouhuoadd from '@/components/shouhuoadd'
+import Addresslist from '@/components/addresslist'
+import Toursign from '@/components/toursign'
+import Bycarmore from '@/components/bycarmore'
+import Studying from '@/components/studying'
+import Tourmore from '@/components/tourmore'
+import HxMember from '@/components/hxmember'
+import Membermotion from '@/components/membermotion'
+import Membermotion1 from '@/components/membermotion1'
+import Membermotion2 from '@/components/membermotion2'
+import Collect from '@/components/collect'
+
+
 
 
 
@@ -49,6 +64,12 @@ export default new Router({
           name: 'member',
           component: Member
       },
+      //好象会员卡页面
+      {
+          path: '/hxmember',
+          name: 'hxmember',
+          component: HxMember
+      },
       //会员卡内容页
       {
           path: '/membershow',
@@ -79,6 +100,80 @@ export default new Router({
           name: 'goodshow',
           component: Goodshow
       },
+      //物流信息
+      {
+          path: '/logistics',
+          name: 'logistics',
+          component: Logistics
+      },
+      //活动详情页
+      {
+          path: '/activemore',
+          name: 'activemore',
+          component: Activemore
+      },
+      //收货地址添加
+      {
+          path: '/shouhuoadd',
+          name: 'shouhuoadd',
+          component: Shouhuoadd
+      },
+      //收货地址列表
+      {
+          path: '/addresslist',
+          name: 'addresslist',
+          component: Addresslist
+      },
+      //旅行特卖报名成功
+      {
+          path: '/toursign',
+          name: 'toursign',
+          component: Toursign
+      },
+      //叮叮驾考活动页面
+      {
+          path: '/bycarmore',
+          name: 'bycarmore',
+          component: Bycarmore
+      },
+      //出国留学活动页面
+      {
+          path: '/studying',
+          name: 'studying',
+          component: Studying
+      },
+      //旅游特卖活动页面
+      {
+          path: '/tourmore',
+          name: 'tourmore',
+          component: Tourmore
+      },
+      //好象会员示意（已过期）
+      {
+          path: '/membermotion',
+          name: 'membermotion',
+          component: Membermotion
+      },
+      //好象会员示意（去开通）
+      {
+          path: '/membermotion1',
+          name: 'membermotion1',
+          component: Membermotion1
+      },
+      //好象会员示意（体验）
+      {
+          path: '/membermotion2',
+          name: 'membermotion2',
+          component: Membermotion2
+      },
+      //收藏页列表
+      {
+          path: '/collect',
+          name: 'collect',
+          component: Collect
+      },
+
+
 
   ]
 })

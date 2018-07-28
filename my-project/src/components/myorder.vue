@@ -124,14 +124,15 @@
 </script>
 
 <style scoped>
-    body{
-        background: #f5f5f5;
-    }
     header{
         width: 100%;
         height: 0.88rem;
         background:  linear-gradient(to right, #ff1c8b , #f37404);
-        line-height: 0.32rem;
+        line-height: 0.50rem;
+        position: fixed;
+        top:0;
+        left:0;
+        z-index:99;
     }
     .back{
         width: 0.32rem;
@@ -142,6 +143,10 @@
         font-size:0.30rem;
         color:#fff;
         margin-left:2.20rem;
+    }
+    main{
+        width: 100%;
+        margin-top: 0.88rem;
     }
     .nav{
         width: 100%;
@@ -159,7 +164,7 @@
         position: relative;
     }
     .xian{
-        width: 0.01rem;
+        width: 0.02rem;
         height: 0.36rem;
         position:absolute;
         top:0.24rem;

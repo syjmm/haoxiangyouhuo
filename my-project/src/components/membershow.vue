@@ -45,7 +45,7 @@
                     <input type="text" class="namekuan" placeholder="请确保所选校区无误">
                     <img src="../assets/images/hyd@2x.png" class="hyaddr">
                 </div>
-                <img src="../assets/images/x_1@2x.png" class="gou">
+                <div class="gou"></div>
                 <span class="tong">我已阅读并同意<a>[会员协议]</a></span>
             </div>
         </main>
@@ -74,7 +74,10 @@
         width: 100%;
         height: 0.88rem;
         background:  linear-gradient(to right, #ff1c8b , #f37404);
-        line-height: 0.32rem;
+        line-height: 0.50rem;
+        position: fixed;
+        top:0;
+        left:0;
     }
     .back{
         width: 0.34rem;
@@ -85,6 +88,10 @@
         font-size:0.30rem;
         color:#fff;
         margin-left:2.20rem;
+    }
+    main{
+        width: 100%;
+        margin-top: 0.88rem;
     }
     .cardshow{
         width: 100%;
@@ -119,6 +126,7 @@
         margin-top: 0.26rem;
         float:left;
         margin-bottom: 0.23rem;
+        position: relative;
         background: url("../assets/images/hybg@2x.png") no-repeat center/cover;
     }
     .tetu{
@@ -232,6 +240,7 @@
         display: block;
         float:left;
         margin:0.22rem 0.14rem 0.24rem 0.65rem;
+        background: url("../assets/images/x_1@2x.png") no-repeat center/cover;
     }
     .tong{
         font-size:0.24rem;
@@ -243,5 +252,16 @@
     .tong a{
         color:#f9444d;
     }
+    main{
+        width: 100%;
+        height: auto;
+        float:left;
+        margin-bottom: 0.85rem;
+    }
+    .gou:hover{
+        background: url("../assets/images/x_2@2x.png") no-repeat center/cover;
+    }
+
+
 
 </style>

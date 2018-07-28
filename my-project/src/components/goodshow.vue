@@ -15,7 +15,7 @@
                 </div>
                 <p>
                     <span class="good-form">[门店自营]</span>
-                    <p class="description">三只松鼠——乳酸菌小伴侣面包 520gx2箱 营养早餐口袋零食</p>
+                    <p class="description">三只松鼠乳_酸菌小伴侣面包 520gx2箱 营养早餐口袋零食</p>
                 </p>
                 <div class="price">
                     <span class="oldprice">￥65</span>
@@ -50,7 +50,6 @@
                 <div class="yx-item">
                     <div class="box">
                         <img src="../assets/images/Image1@2x.png" class="goodstu">
-                        <img src="../assets/images/Favourite_2@2x.png" class="goodstu2">
                     </div>
                     <div class="yx-ginfo">
                         <span class="yx-gname">三只松鼠夏威夷果 100g*3新鲜混合 最新口味</span>
@@ -62,7 +61,6 @@
                 <div class="yx-item yx-item1">
                     <div class="box">
                         <img src="../assets/images/Image1@2x.png" class="goodstu">
-                        <img src="../assets/images/Favourite_2@2x.png" class="goodstu2">
                     </div>
                     <div class="yx-ginfo">
                         <span class="yx-gname">三只松鼠夏威夷果 100g*3新鲜混合 最新口味</span>
@@ -74,7 +72,6 @@
                 <div class="yx-item">
                     <div class="box">
                         <img src="../assets/images/Image1@2x.png" class="goodstu">
-                        <img src="../assets/images/Favourite_2@2x.png" class="goodstu2">
                     </div>
                     <div class="yx-ginfo">
                         <span class="yx-gname">三只松鼠夏威夷果 100g*3新鲜混合 最新口味</span>
@@ -86,7 +83,6 @@
                 <div class="yx-item yx-item1">
                     <div class="box">
                         <img src="../assets/images/Image1@2x.png" class="goodstu">
-                        <img src="../assets/images/Favourite_2@2x.png" class="goodstu2">
                     </div>
                     <div class="yx-ginfo">
                         <span class="yx-gname">三只松鼠夏威夷果 100g*3新鲜混合 最新口味</span>
@@ -109,46 +105,81 @@
                     <img src="../assets/images/Favourite@3x.png" class="server liketu">
                     <span class="kefu">收藏</span>
                 </div>
-                <button class="lijishop">立即购买</button>
-                <button class="lijishop lijishop1">加入购物车</button>
+                <button class="lijishop" @click="goodshow">立即购买</button>
+                <button class="lijishop lijishop1" @click="goodshow">加入购物车</button>
             </div>
-            <div class="goods">
-                <div class="goodsxtu"></div>
-                <span class="sum">共计: <span class="prices">￥65.00</span></span>
-                <span class="numbers">库存600件</span>
-                <div class="close">x</div>
-                <span class="style">类型:</span>
-                <div class="stylebox">
-                    <div class="style1">120g</div>
-                    <div class="style1 style2">120g</div>
-                    <div class="style1 style2">120g</div>
-                </div>
+            <div class="zhezhao" v-show="showbox">
+                <div class="goods">
+                    <div class="goodsxtu"></div>
+                    <span class="sum">共计: <span class="prices">￥65.00</span></span>
+                    <span class="numbers">库存600件</span>
+                    <div class="close" @click="close">x</div>
+                    <span class="style">类型:</span>
+                    <div class="stylebox">
+                        <div class="style1">120g</div>
+                        <div class="style1 style2">120g</div>
+                        <div class="style1 style2">120g</div>
+                    </div>
 
-                <span class="num">数量:</span>
-                <img src="../assets/images/jh@2x.png" class="jh">
-                <span class="numadd">2</span>
-                <img src="../assets/images/jhh@2x.png" class="jh jhh">
-                <div class="ok">选好了</div>
+                    <span class="num">数量:</span>
+                    <img src="../assets/images/jh@2x.png" class="jh" @click="reduce">
+                    <span class="numadd">{{goodsnum}}</span>
+                    <img src="../assets/images/jhh@2x.png" class="jh jhh" @click="add">
+                    <div class="ok">选好了</div>
+                </div>
             </div>
+
         </footer>
     </div>
 </template>
 
 <script>
     export default {
-        name: "goodshow"
+        name: "goodshow",
+        data () {
+            return {
+               showbox:false,
+                goodsnum:0
+            }
+        },
+        methods:{
+            goodshow(){
+                this.showbox=!this.showbox;
+                var mo=function(e){e.preventDefault();};
+                document.body.style.overflow='hidden';
+                document.addEventListener("touchmove",mo,{passive:false});//禁止滚动
+            },
+            close(){
+                this.showbox=false;
+                var mo=function(e){e.preventDefault();};
+                document.body.style.overflow='';//出现滚动条
+                document.removeEventListener("touchmove",mo,{passive:false});
+            },
+            add(){
+                this.goodsnum++
+            },
+            reduce(){
+                this.goodsnum--;
+                if(this.goodsnum<=0){
+                    this.goodsnum=0;
+                }
+            },
+
+        }
     }
 </script>
 
 <style scoped>
-    body{
-        background: #f5f5f5;
-    }
+
     header{
         width: 100%;
         height: 6vh;
         background:  linear-gradient(to right, #ff1c8b , #f37404);
-        line-height: 0.32rem;
+        line-height: 0.50rem;
+        position:fixed;
+        top:0;
+        left:0;
+        z-index:99;
     }
     .back{
         width: 0.34rem;
@@ -168,6 +199,10 @@
         margin-top: 0.25rem;
         float:right;
     }
+    main{
+        width: 100%;
+        margin-top:0.8rem;
+    }
     .good-info{
         width: 100%;
         height: auto;
@@ -177,7 +212,6 @@
     .imgbox{
         width: 100%;
         height: 5.04rem;
-        background: #ff1c8b;
         position: relative;
     }
     .banner{
@@ -205,6 +239,7 @@
         display: block;
         padding-left:0.34rem;
         padding-top:0.34rem;
+        width: 7.0rem;
     }
     .oldprice{
         font-size:0.28rem;
@@ -282,7 +317,6 @@
     .goodsmore{
         width: 100%;
         height: auto;
-        background: #ff1c8b;
         float: left;
         margin-top: 0.07rem;
     }
@@ -333,13 +367,7 @@
         width: 100%;
         height: 100%;
     }
-    .box .goodstu2{
-        width: 0.34rem;
-        height: 0.29rem;
-        position: absolute;
-        top:0.15rem;
-        right:0.18rem;
-    }
+
     .yx-ginfo{
         width: 100%;
         height: 1.22rem;
@@ -397,9 +425,9 @@
         float:left;
     }
     .ser{
-        width: 0.44rem;
+        width: 0.48rem;
         height: 100%;
-        margin-left: 0.60rem;
+        margin-left: 0.53rem;
         float: left;
 
     }
@@ -418,7 +446,7 @@
         padding-top: 0.10rem;
     }
     .like{
-        width: 0.45rem;
+        width: 0.48rem;
         margin-left: 0.88rem;
     }
     .liketu{
@@ -486,6 +514,7 @@
         border-radius: 50%;
         text-align: center;
         font-size:0.18rem;
+        line-height: 0.39rem;
         color:#a2a2a2;
     }
     .style{
@@ -508,6 +537,9 @@
     }
     .style2{
         margin-left:0;
+    }
+    .style1:hover{
+        color:#f9444d;
     }
     .stylebox{
         width: 100%;
@@ -539,16 +571,24 @@
         display: block;
         position: absolute;
         right:1.41rem;
-        bottom:1.62rem;
+        bottom:1.55rem;
     }
     .numadd{
-        font-size:0.24rem;
+        font-size:0.28rem;
         color:#555555;
         position: absolute;
-        right:1.03rem;
-        bottom:1.67rem;
+        right:0.97rem;
+        bottom:1.58rem;
     }
     .jhh{
         right:0.41rem;
+    }
+    .zhezhao{
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,0.3);
+        position: fixed;
+        top:0;
+        left:0;
     }
 </style>

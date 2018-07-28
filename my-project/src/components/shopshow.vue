@@ -30,7 +30,7 @@
 
                 </div>
                 <div class="tushow-addr">
-                    <span class="diwei">xxx</span>
+                    <img class="aimg" src="../assets/images/ad@2x.png">
                     <span class="diwei diwei1">成都市武侯区玉林西路22号</span>
                     <img src="../assets/images/dh@2x.png" class="pimg">
                 </div>
@@ -75,14 +75,15 @@
 </script>
 
 <style scoped>
-    body{
-        background: #f5f5f5;
-    }
+
     header{
         width: 100%;
         height: 6vh;
         background:  linear-gradient(to right, #ff1c8b , #f37404);
         line-height: 0.32rem;
+        position: fixed;
+        left:0;
+        top:0;
     }
     .back{
         width: 0.34rem;
@@ -101,6 +102,10 @@
         margin-right:0.38rem;
         margin-top: 0.25rem;
         float:right;
+    }
+    main{
+        width: 100%;
+        margin-top: 0.8rem;
     }
     .shop{
         width: 100%;
@@ -162,6 +167,13 @@
         width: 100%;
         height: auto;
         float:left;
+    }
+    .aimg{
+        width: 0.25rem;
+        height: 0.33rem;
+        display: block;
+        float:left;
+        margin:0.22rem 0 0 0.36rem;
     }
     .diwei{
         font-size:0.31rem;

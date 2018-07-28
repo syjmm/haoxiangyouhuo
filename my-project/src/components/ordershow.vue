@@ -2,7 +2,7 @@
     <div id="main">
         <!--头部-->
         <header>
-            <span class="back">xxx</span>
+            <img src="../assets/images/backWhite.png" class="back">
             <span class="title">订单详情</span>
         </header>
         <!--内容-->
@@ -77,24 +77,29 @@
 </script>
 
 <style scoped>
-    body{
-        background: #f5f5f5;
-    }
     header{
         width: 100%;
         height: 0.88rem;
         background:  linear-gradient(to right, #ff1c8b , #f37404);
-        line-height: 0.32rem;
+        line-height: 0.50rem;
+        position: fixed;
+        top:0;
+        left:0;
+        z-index:99;
     }
     .back{
-        font-size:0.22rem;
-        color:#fff;
+        width: 0.34rem;
+        height: 0.24rem;
         margin-left:0.32rem;
     }
     .title{
         font-size:0.30rem;
         color:#fff;
         margin-left:2.20rem;
+    }
+    main{
+        width: 100%;
+        margin-top: 0.88rem;
     }
     .order-box1{
         width: 100%;

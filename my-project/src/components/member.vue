@@ -36,7 +36,7 @@
         width: 100%;
         height: 0.88rem;
         background:  linear-gradient(to right, #ff1c8b , #f37404);
-        line-height: 0.32rem;
+        line-height: 0.50rem;
     }
     .back{
         width: 0.34rem;
